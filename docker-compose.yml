@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+ dbpost:
+  image: postgres:latest
+  environment:
+   POSTGRES_DB: car_rent
+   POSTGRES_USER: f55
+   POSTGRES_PASSWORD: renting
+  volumes:
+   - ./init_scripts/script.sql:/docker-entrypoint-initdb.d/script.sql
+  ports:
+   - 5432:5432
